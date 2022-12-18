@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //enterCurrentYear();
-        task2();
+        //task2();
+        task3();
     }
 
     public static void enterCurrentYear() {
@@ -46,4 +47,19 @@ public class Main {
         }
     }
 
+    public static void task3() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите дистанцию доставки (в км): ");
+        int enterDeliveryDistance = in.nextInt();
+        int daysForDelivery = calcDaysForDelivery(enterDeliveryDistance);
+        System.out.printf("Дней доставки: %d", daysForDelivery);
+    }
+
+    public static int calcDaysForDelivery(int deliveryDistance) {
+        int daysTotal = 1;
+        for (int i = 20; i < deliveryDistance; i += 40) {
+            daysTotal += 1;
+        }
+        return daysTotal;
+    }
 }
